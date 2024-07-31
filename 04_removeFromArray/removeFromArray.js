@@ -1,16 +1,11 @@
-const removeFromArray = function(array, remove) {
-    if (array.includes(remove)){
+const removeFromArray = function(array, ...args) {
 
-        // Find index of argument to remove
-        let index = array.indexOf(remove);
-
-        // Remove argument at index
-        array.splice(index, 1);
-        
-        return array;
-    } else {
-        return 'Argument not found.';
-    }
+    args.forEach((arg) => {
+        const index = array.indexOf(arg);
+        if (index > -1)
+          array.splice(index, 1);
+      });
+    return array;
 };
 
 // Do not edit below this line

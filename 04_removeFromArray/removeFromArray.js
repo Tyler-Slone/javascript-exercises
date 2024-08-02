@@ -1,11 +1,16 @@
 const removeFromArray = function(array, ...args) {
 
-    args.forEach((arg) => {
-        const index = array.indexOf(arg);
-        if (index > -1)
-          array.splice(index, 1);
-      });
-    return array;
+  const newArray = [];
+
+  array.forEach((instance) => {
+
+    if (!args.includes(instance)) {
+      newArray.push(instance);
+    }
+
+  });
+
+  return newArray;
 };
 
 // Do not edit below this line

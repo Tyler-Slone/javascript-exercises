@@ -4,9 +4,9 @@ const sumAll = function(min, max) {
         return 'ERROR'
     };
 
-    // if (){
-    //     return 'ERROR'
-    // }
+    if (!Number.isInteger(min) || !Number.isInteger(max)){
+        return 'ERROR'
+    }
 
     // Fix swapped min and max values
     if (min > max){
@@ -15,6 +15,7 @@ const sumAll = function(min, max) {
         max = max - min;
     };
 
+    // Sum all integers between min and max
     let sum = 0
     for (let i = min; i <= max; i++) {
         sum += i
